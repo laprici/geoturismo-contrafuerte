@@ -1,16 +1,28 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/Header.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Geoturismo Contrafuerte" description="Este patrimonio geológico natural de extraordinaria belleza y atractivo, es considerado una de las rutas imperdibles en el país, ha sido protagonista de 3 importantes erupciones en los últimos 100 años, 1921, 1960, 2011, siendo además uno de los principales sitios de exploración geotérmica de Chile.">
+	<Header />
+</Layout>
+
+<style is:global>
+	@font-face {
+		font-family: "Radwave";
+		src: url("/font/RadwaveFont.otf") format("opentype");
+	}
+
+	.font-radwave {
+		font-family: "Radwave";
+	}
+
+	.stroke-1px-white {
+		-webkit-text-stroke: 1px white;
+	}
+
+	.title {
+		font-size: 3.8rem;
+	}
+</style>
