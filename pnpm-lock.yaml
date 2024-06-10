@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.10.1)(tailwindcss@3.4.4)
+  '@fontsource/nunito-sans':
+    specifier: ^5.0.13
+    version: 5.0.13
   '@fontsource/ropa-sans':
     specifier: ^5.0.13
     version: 5.0.13
@@ -819,6 +822,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/nunito-sans@5.0.13:
+    resolution: {integrity: sha512-rsajElysg08MhRPYiCZ1lh/34gTfHx9XzyP10oXPwgiFud7MIHAHjE1PTwYlZZDdceu89UzjxelRx98yie8wCw==}
+    dev: false
 
   /@fontsource/ropa-sans@5.0.13:
     resolution: {integrity: sha512-HDy5X6Xd5dBmRlIg2VHuvI/VSN/eaG6tWWldCoUkan0rF4qtffEWlIN8F6pds0J3A1n3JuVOzF4iwwGDHZG9oQ==}

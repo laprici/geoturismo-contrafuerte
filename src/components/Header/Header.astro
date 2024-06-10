@@ -1,11 +1,25 @@
 ---
 import Navbar from './Navbar.astro';
 import Slides from './Slides.jsx';
+import CardNav from './CardNav.astro';
+
+const pagination = [
+    {icon: './icon-maker.svg', title: 'Chile', description: 'Lago Ranco', background:'bg-[#00000047]'},
+    {icon: './icon-person.svg', title: 'Turismo geológico', description: 'Geotour', background:'bg-[#00000047]'},
+    {icon: './icon-ig.svg', title: 'Síguenos', description: '@geoturismo.contrafuerte', background:'bg-[#00000047]'},
+    {icon: './icon-phone.svg', title: 'Reserva ahora', description: '+56 9 9443 7730', background:'bg-[#000000CC]'}
+]
 ---
+
 <header>
     <Navbar />
     <div class="absolute w-screen h-screen overflow-hidden">
         <Slides />
+        <div class="absolute bottom-0 z-10 flex flex-col lg:flex-row justify-center items-end">
+            {pagination.map( pag =>
+                <CardNav icon={pag.icon} title={pag.title} description={pag.description} background={pag.background}/>
+            )}
+        </div>
     </div>
 </header>
 
