@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import './style.css';
 
@@ -24,12 +24,16 @@ const Slides = () => {
                     effect={'coverflow'}
                     spaceBetween={0}
                     centeredSlides={true}
-                    centeredSlidesBounds={true}
-                    slideToClickedSlide={true}
-                    slidesPerView={1}
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: false,
                     }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    slidesPerView={1}
                 >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
