@@ -4,10 +4,14 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
 ---
 
 <div class={divClass}>
-    <img src={icon} alt="icon" width="25" height="25">
+    <img src={icon} alt="icon" width="25" height="25" />
     <div class="flex flex-col text-div">
         <p class="text-white font-nunito uppercase font-bold">{title}</p>
-        <p class="text-white uppercase description opacity-0 text-xs lg:text-sm">{description}</p>
+        <p
+            class="text-white uppercase description opacity-0 text-xs lg:text-sm"
+        >
+            {description}
+        </p>
     </div>
 </div>
 
@@ -18,7 +22,7 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
     }
 
     .navcard:hover .text-div .description {
-        opacity: 1;
+        opacity: initial;
         transition: opacity 0.3s ease;
     }
 
@@ -30,5 +34,29 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
     .navcard:hover {
         padding: 50px 2.5rem;
         transition: padding 0.3s ease;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .text-div {
+            transform: none;
+            transition: transform 0.3s ease;
+        }
+        .description {
+            opacity: 1;
+        }
+        .navcard:hover .text-div .description {
+            opacity: 1;
+            transition: none;
+        }
+
+        .navcard:hover .text-div {
+            transform: none;
+            transition: none;
+        }
+
+        .navcard:hover {
+            transition: none;
+            padding:  1.25rem 2.5rem;
+        }
     }
 </style>
