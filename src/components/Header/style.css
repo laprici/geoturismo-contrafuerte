@@ -1,0 +1,9 @@
+.relative.container {
+    content: "";
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #1746a2, transparent);
+}
