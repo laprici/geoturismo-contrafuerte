@@ -1,0 +1,60 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<div class="flex h-[90vh] flex-rows overflow-hidden" id="img-section1">
+    <div class="w-1/2"></div>
+    <div class="w-1/2 flex flex-col justify-center">
+        <div id="capa" class="absolute w-full h-full"></div>
+        <div class="relative m-10">
+            <div class="" id="div2">
+                <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5">
+                    <span
+                        class="font-nunito uppercase font-black text-[#494949] text-[1.3rem]"
+                        >Sumérgete en la&nbsp;</span
+                    >
+                    <span
+                        class="font-nunito uppercase font-black text-[#83A327] text-[1.3rem]"
+                        >experiencia única&nbsp;</span
+                    >
+                    <span
+                        class="font-nunito uppercase font-black text-[#494949] text-[1.3rem]"
+                        >de explorar</span
+                    >
+                    <h2
+                        class="font-radwave text-transparent stroke-1px-grey leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]"
+                    >
+                        Geoturismo Contrafuerte
+                    </h2>
+                </div>
+            </div>
+            <div class="my-5">
+                <p class="font-nunito font-light max-w-[800px]">
+                    El hermoso Valle de Contrafuerte se encuentra distante a
+                    48 km.al Sur-este de la Comuna de Lago Ranco, es un Área
+                    Protegida Privada que cuenta con 3.200 hás., geográficamente se
+                    encuentra colindante al Complejo volcánico Puyehue-Cordón Caulle
+                    por lo que cuenta con un acceso directo al Geo Patrimonio.Posee
+                    un rico ecosistema lleno de biodiversidad que alberga 56
+                    especies entre aves y mamíferos tales como el carpintero
+                    negro, el Hued-Hued, Chucao ,Martín Pescador, Puma, el Monito
+                    del Monte entre muchos otros.
+                </p>
+            </div>
+            <Button text="Conoce más" />
+        </div>
+    </div>
+</div>
+
+<style>
+    #img-section1 {
+        background: url("/section1.png") no-repeat;
+        background-size: cover;
+        background-position-y: 100%;
+    }
+
+    #capa {
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(10.3px);
+    }
+</style>
