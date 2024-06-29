@@ -1,11 +1,12 @@
 ---
 import Button from "../components/Button.astro";
+import Title from "./Title.astro";
 ---
 
 <div class="flex h-[90vh] flex-rows overflow-hidden" id="img-section1">
     <div class="w-1/2"></div>
     <div class="w-1/2 flex flex-col justify-center">
-        <div id="capa" class="absolute w-full h-full"></div>
+        <div id="capa" class="absolute w-1/2 h-[90vh]"></div>
         <div class="relative m-10">
             <div class="" id="div2">
                 <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5">
@@ -21,11 +22,7 @@ import Button from "../components/Button.astro";
                         class="font-nunito uppercase font-black text-[#494949] text-[1.3rem]"
                         >de explorar</span
                     >
-                    <h2
-                        class="font-radwave text-transparent stroke-1px-grey leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]"
-                    >
-                        Geoturismo Contrafuerte
-                    </h2>
+                    <Title title="Geoturismo Contrafuerte"/>
                 </div>
             </div>
             <div class="my-5">
