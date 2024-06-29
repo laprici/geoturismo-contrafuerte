@@ -1,0 +1,25 @@
+---
+import Title from "../Title.astro";
+import Card from "./Card.astro";
+
+const cards = [
+    { url: '/card1.png', title: 'Aguas Termales', text: 'Las aguas termales son el resultado entre el agua subterránea y las condiciones geotérmicas, lo que les confiere sus propiedades terapéuticas y las convierte en un atractivo natural para quienes buscan relajación y bienestar.', button: '' },
+    { url: '/card2.png', title: 'Cordón Caulle', text: 'El Cordón Caulle es el mayor Sistema Geotermal activo de la zona volcánica Sur. Su última erupción fué el 04 de junio del 2011 expulsando ceniza y piedra pómez formando una columna de 10 kms de altura.', button: '' },
+    { url: '/card3.png', title: 'Volcán Puyehue', text: 'Descubre la majestuosidad del volcán y aventúrate por paisajes impresionantes y  vistas panorámicas. Ideal para los amantes del trekking y la naturaleza.', button: '' }
+]
+---
+
+<div class="px-10">
+    <div class="border-[#54574E] border-t-[10px] max-w-[600px] pt-5">
+        <span class="font-nunito uppercase font-black text-[#54574E] text-[1.3rem]">Aventúrate&nbsp;</span>
+        <Title title="Atractivos" />
+    </div>
+
+    <div class="flex gap-x-10 justify-center pt-10">
+        { cards.map( card => {
+            return(
+                <Card url={card.url} title={card.title} text={card.text} button={card.button}/>
+            )
+        })}
+    </div>
+</div>

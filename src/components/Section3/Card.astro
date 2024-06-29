@@ -1,0 +1,22 @@
+---
+import Button from "../Button.astro";
+const { url, title, text, button } = Astro.props;
+---
+
+<div class="flex flex-col justify-between bg-white w-[366px] pb-5">
+    <div class="flex flex-col items-center">
+        <img src={url} alt="">
+        <div class="pt-5">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.00001 16L7.00001 16L7.00001 4L1.50001 9.5L0.0800126 8.08L8.00001 0.160001L15.92 8.08L14.5 9.5L9.00001 4L9.00001 16Z" fill="#6E7075"/>
+            </svg>
+        </div>
+        <div class="px-5 py-5">
+            <p class="font-nunito font-bold uppercase text-[#494949] text-[1.3rem] text-center pb-3">{title}</p>
+            <p class="font-nunito text-justify">{text}</p>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <Button text="Ver más" onlick={button} border='Y'/>
+    </div>
+</div>
