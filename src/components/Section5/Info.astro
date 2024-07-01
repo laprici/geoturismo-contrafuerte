@@ -1,0 +1,17 @@
+---
+const { icon, title, detail, value } = Astro.props;
+---
+
+<div class="flex gap-x-5 items-center pt-5">
+    <img src={icon} alt="ícono medio transporte">
+    <div>
+        <p class="font-nunito font-semibold">{title}</p>
+        <p class="font-nunito text-[#9F6D55]">{detail}</p>
+        <p class="font-nunito text-[#9F6D55] font-bold">
+            {value.split('HRS')[1]
+                ? <span>{value.split('HRS')[0]} <br> {value.split('HRS')[1]}</span>
+                : <span>{value}</span>
+            }
+        </p>
+    </div>
+</div>
