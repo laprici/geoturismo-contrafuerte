@@ -64,10 +64,10 @@ const Slides = () => {
                         <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
                         <div className='py-10 w-auto'>
                             <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
-                                <div className="max-w-[1000px] p-10">
-                                    <p className='uppercase text-white'>Rutas</p>
-                                    <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">0{index + 1}.&nbsp;</span>
-                                    <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">
+                                <div className="max-w-[1200px] p-10">
+                                    <p className='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
+                                    <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">0{index + 1}.&nbsp;</span>
+                                    <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">
                                         {slide.title}
                                     </span>
                                     <p className="text-white font-nunito pt-5">{slide.subtitle}</p>
