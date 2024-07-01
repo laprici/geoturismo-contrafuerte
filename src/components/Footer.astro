@@ -1,0 +1,73 @@
+---
+const data = [
+    {icon: 'icon-phone-footer.svg', text: '+56 9 9443 7730', url: 'https://api.whatsapp.com/send?phone=56994437730'},
+    {icon: 'icon-ig-footer.svg', text: '@geoturismo.contrafuerte', url: 'https://instagram.com/geoturismo.contrafuerte'},
+    {icon: 'icon-email-footer.svg', text: 'geocontrafuerte@gmail.com', url: 'mailto:geocontrafuerte@gmail.com'},
+    {icon: 'icon-web-footer.svg', text: 'www.geoturismocontrafuerte.cl', url: '', disabled: true},
+]
+---
+
+<footer class="py-20">
+    <div class="flex px-10">
+        <div class="w-1/2 flex">
+            <div class="w-1/2">
+                <svg width="233" height="4" viewBox="0 0 233 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="233" height="4" fill="#324B3E"/>
+                </svg>
+                <p class="font-nunito font-semibold uppercase pt-2">Consultas y reservas</p>
+                <div class="flex flex-col gap-y-3 pt-5">
+                    {data.map( data => (
+                        <div class="flex col gap-x-3">
+                            <img src={data.icon} width="25" alt="icon contacto">
+                            {
+                                data.disabled
+                                    ? <span>{data.text}</span>
+                                    : <a href={data.url} target="_blank">{data.text}</a>
+                            }
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div class="w-1/2">
+                <svg width="233" height="4" viewBox="0 0 233 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="233" height="4" fill="#324B3E"/>
+                </svg>
+                <p class="font-nunito font-semibold uppercase pt-2">Créditos fotos y videos</p>
+
+                <div class="flex gap-x-3 pt-5">
+                    <div>
+                        <img src="/icon-ig-footer.svg" alt="icon instagram">
+                    </div>
+                    <div class="user-list">
+                        <ul>
+                            <li><a href="https://instagram.com/maya.tsp1" target="_blank">@maya.tsp1</a></li>
+                            <li><a href="https://instagram.com/cecicroft" target="_blank">@cecicroft</a></li>
+                            <li><a href="https://instagram.com/expediciones_kalfu" target="_blank">@expediciones_kalfu</a></li>
+                            <li><a href="https://instagram.com/camshaftman" target="_blank">@camshaftman</a></li>
+                            <li><a href="https://instagram.com/carloncho1984" target="_blank">@carloncho1984</a></li>
+                            <li><a href="https://instagram.com/pablolloncon" target="_blank">@pablolloncon</a></li>
+                            <li><a href="https://instagram.com/chevypineday" target="_blank">@chevypineday</a></li>
+                            <li><a href="https://instagram.com/raulhott" target="_blank">@raulhott</a></li>
+                            <li><a href="https://instagram.com/cristobal_tessada" target="_blank">@cristobal_tessada</a></li>
+                            <li><a href="https://instagram.com/paulinoandres" target="_blank">@paulinoandres</a></li>
+                            <li><a href="https://instagram.com/pablo018" target="_blank">@pablo018</a></li>
+                            <li><a href="https://instagram.com/hostal.espiritual" target="_blank">@hostal.espiritual</a></li>
+                            <li>Alfredo Songer e hijos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 flex justify-end items-center">
+            <img src="/logo-footer.webp" alt="">
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background: url('/fondo-footer.webp') no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
+</style>
