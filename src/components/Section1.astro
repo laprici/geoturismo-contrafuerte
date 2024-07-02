@@ -1,13 +1,14 @@
 ---
 import Button from "../components/Button.astro";
 import Title from "./Title.astro";
+
 ---
 
-<div class="flex h-[90vh] flex-rows overflow-hidden" id="img-section1">
+<div class="relative flex h-[90vh] flex-rows overflow-hidden" id="img-section1">
     <div class="w-1/2"></div>
     <div class="w-1/2 flex flex-col justify-center">
-        <div id="capa" class="absolute w-1/2 h-[90vh]"></div>
-        <div class="relative m-10">
+        <div id="capa" class="absolute w-full h-[90vh]"></div>
+        <div class="absolute m-10 w-full" id="title-container">
             <div class="" id="div2">
                 <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5">
                     <span
@@ -22,23 +23,24 @@ import Title from "./Title.astro";
                         class="font-nunito uppercase font-black text-[#494949] text-[1.3rem]"
                         >de explorar</span
                     >
-                    <Title title="Geoturismo Contrafuerte"/>
+                    <Title title="Geoturismo Contrafuerte" />
                 </div>
             </div>
             <div class="my-5">
-                <p class="font-nunito font-light max-w-[800px]">
-                    El hermoso Valle de Contrafuerte se encuentra distante a
-                    48 km.al Sur-este de la Comuna de Lago Ranco, es un Área
-                    Protegida Privada que cuenta con 3.200 hás., geográficamente se
-                    encuentra colindante al Complejo volcánico Puyehue-Cordón Caulle
-                    por lo que cuenta con un acceso directo al Geo Patrimonio.Posee
-                    un rico ecosistema lleno de biodiversidad que alberga 56
-                    especies entre aves y mamíferos tales como el carpintero
-                    negro, el Hued-Hued, Chucao ,Martín Pescador, Puma, el Monito
-                    del Monte entre muchos otros.
+                <p class="font-nunito font-light max-w-[800px]" id="description">
+                    El hermoso Valle de Contrafuerte se encuentra distante a 48
+                    km.al Sur-este de la Comuna de Lago Ranco, es un Área
+                    Protegida Privada que cuenta con 3.200 hás., geográficamente
+                    se encuentra colindante al Complejo volcánico Puyehue-Cordón
+                    Caulle por lo que cuenta con un acceso directo al Geo
+                    Patrimonio.Posee un rico ecosistema lleno de biodiversidad
+                    que alberga 56 especies entre aves y mamíferos tales como el
+                    carpintero negro, el Hued-Hued, Chucao ,Martín Pescador,
+                    Puma, el Monito del Monte entre muchos otros.
                 </p>
             </div>
-            <Button text="Conoce más" />
+            <Button text="Conoce más" id="conocer-mas" />
+            <Button class="hidden" text="Volver" id="volver"/>
         </div>
     </div>
 </div>
@@ -54,4 +56,47 @@ import Title from "./Title.astro";
         background: rgba(255, 255, 255, 0.18);
         backdrop-filter: blur(10.3px);
     }
+
+    #title-container,
+    #capa {
+        transition: transform 0.5s ease;
+    }
+
+    #capa.shifted,
+    #title-container.shifted {
+        transform: translateX(-50%);
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#conocer-mas").addEventListener("click", function(){ handleButtonClick() });
+        document.querySelector("#volver").addEventListener("click", function(){ handleButtonClick() });
+    });
+
+    function handleButtonClick() {
+        const button = document.getElementById('conocer-mas');
+        const buttonVolver = document.getElementById('volver');
+        const description = document.getElementById("description");
+        document.getElementById("capa").classList.toggle("shifted");
+        document.getElementById("title-container").classList.toggle("shifted");
+
+        description.classList.toggle('max-w-[800px]')
+        description.classList.toggle('w-5/6');
+
+        button.classList.toggle('hidden');
+        buttonVolver.classList.toggle('hidden');
+
+        if(Array.from(button.classList).some(b => b === 'hidden')) {
+            description.innerText = `Naturaleza simplemente poderosa, palabras que mejor representan y distinguen al Complejo Volcánico Puyehue-Cordón Caulle, coronado con el imponente Volcán Puyehue, macizo de 2.240 mts. de altitud, inserto en el Parque Nacional que lleva su nombre, dicho Parque posee 107.000 hás de superficie que comparten 2 regiones ,el 43,2% pertenece a la Región de Los Ríos y el resto a la vecina Región de Los Lagos.
+
+            Éste Patrimonio Geológico natural de extraordinaria belleza y atractivo, es considerado una de las rutas imperdibles en el país, ha sido protagonista de 3 importantes erupciones en los últimos 100 años, 1921 - 1922; 1960 y 2011, siendo además uno de los principales sitios de exploración geotérmica de Chile. La combinación de estos atributos hacen de ésta Área Silvestre Protegida un territorio designado como Reserva de la Biósfera de los Bosques Templados Lluviosos de Los Andes Australes de Chile, formando un corredor biológico que se expande hacia el norte dando forma a un hermoso Valle llamado Contrafuerte.
+
+            El valle de Contrafuerte fue testigo clave de la última erupción del Cordón Caulle el año 2011, el cual dejó una gran extensión de Bosque Gris, afectados por el manto de ceniza y piedra pómez que los dejó de pie pero sin vida. La vegetación se está regenerando desde la misma ceniza...la vida busca su camino, sobre todo en un espacio rodeado de vertientes y arroyos que nacen de las profundidades de la tierra junto a las exquisitas y placenteras aguas termales que es uno de los principales atractivos turísticos del lugar.`;
+        } else {
+            description.innerText = 'El hermoso Valle de Contrafuerte se encuentra distante a 48 km.al Sur-este de la Comuna de Lago Ranco, es un Área Protegida Privada que cuenta con 3.200 hás., geográficamente se encuentra colindante al Complejo volcánico Puyehue-Cordón Caulle por lo que cuenta con un acceso directo al Geo Patrimonio.Posee un rico ecosistema lleno de biodiversidad que alberga 56 especies entre aves y mamíferos tales como el carpintero negro, el Hued-Hued, Chucao ,Martín Pescador, Puma, el Monito del Monte entre muchos otros.'
+        }
+    }
+
+
+</script>

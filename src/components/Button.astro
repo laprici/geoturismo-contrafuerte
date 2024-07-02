@@ -1,11 +1,43 @@
 ---
-const { text, onlick, border } = Astro.props;
-const borderClass = border === 'Y' ? 'border border-black' : '';
+const { text, border, onclick, id, dir, class: className } = Astro.props;
+const borderClass = border === "Y" ? "border border-black" : "";
+
+const arrowDir = dir || "right";
 ---
 
-<button class={`bg-white rounded-full px-4 lg:px-6 flex items-center gap-x-2 py-2 mtlg:py-2 mt-2 uppercase text-xs lg:text-xl ${borderClass}`} onClick={onlick}>
+<button
+    class={`bg-white rounded-full px-4 lg:px-6 flex items-center gap-x-2 py-2 mtlg:py-2 mt-2 uppercase text-xs lg:text-xl ${borderClass} ${className}`}
+    onclick={onclick}
+    id={id}
+>
+    {arrowDir === "left" && (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M20 11L20 13L8 13L13.5 18.5L12.08 19.92L4.16 12L12.08 4.08002L13.5 5.50002L8 11L20 11Z"
+                fill="black"
+            />
+        </svg>
+    )}
     {text}
-    <svg class="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="black"/>
-    </svg>
+    {arrowDir === "right" && (
+        <svg
+            class="w-[18px] lg:w-[24px]"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z"
+                fill="black"
+            />
+        </svg>
+    )}
 </button>
