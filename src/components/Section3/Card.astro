@@ -1,29 +1,61 @@
 ---
 import Button from "../Button.astro";
-const { url, title, text, button } = Astro.props;
+const { url, title, text, button, urlHover } = Astro.props;
 ---
-
-<div class="relative flex flex-col justify-between bg-white w-[366px] pb-5 overflow-hidden hover:shadow-lg">
+<div
+    class="relative flex flex-col justify-between bg-white w-[366px] pb-5 overflow-hidden"
+    id="card"
+>
     <div class="flex flex-col items-center">
         <div class="relative p-0 m-0 w-full">
-            <img src={url} alt="" class="w-full h-[240px] object-cover transition-opacity duration-300">
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 0 L100 100 H0 Z" fill="white" />
-                </svg>
+            <img
+                src={url}
+                alt=""
+                class="w-full h-[240px] object-cover transition-opacity duration-300"
+            />
+            <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black bg-opacity-50"
+            >
+                <img src={urlHover} alt="imagen hover" />
             </div>
         </div>
         <div class="pt-5">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.00001 16L7.00001 16L7.00001 4L1.50001 9.5L0.0800126 8.08L8.00001 0.160001L15.92 8.08L14.5 9.5L9.00001 4L9.00001 16Z" fill="#6E7075"/>
+            <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M9.00001 16L7.00001 16L7.00001 4L1.50001 9.5L0.0800126 8.08L8.00001 0.160001L15.92 8.08L14.5 9.5L9.00001 4L9.00001 16Z"
+                    fill="#6E7075"></path>
             </svg>
         </div>
         <div class="px-5 py-5">
-            <p class="font-nunito font-bold uppercase text-[#494949] text-[1.3rem] text-center pb-3">{title}</p>
+            <p
+                class="font-nunito font-bold uppercase text-[#494949] text-[1.3rem] text-center pb-3"
+            >
+                {title}
+            </p>
             <p class="font-nunito text-justify">{text}</p>
         </div>
     </div>
     <div class="flex justify-center">
-        <Button text="Ver más" onlick={button} border='Y'/>
+        <Button
+            text="Ver más"
+            border="Y"
+            id={button.id}
+        />
     </div>
 </div>
+
+<style>
+    #card {
+        box-shadow: 0px 4px 17.1px 0px rgba(0, 0, 0, 0.09);
+    }
+</style>
+
+<script>
+    
+</script>

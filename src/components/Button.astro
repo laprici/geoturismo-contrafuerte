@@ -1,13 +1,13 @@
 ---
-const { text, border, onclick, id, dir, class: className } = Astro.props;
+const { text, border, id, dir, class: className } = Astro.props;
 const borderClass = border === "Y" ? "border border-black" : "";
 
 const arrowDir = dir || "right";
+
 ---
 
 <button
     class={`bg-white rounded-full px-4 lg:px-6 flex items-center gap-x-2 py-2 mtlg:py-2 mt-2 uppercase text-xs lg:text-xl ${borderClass} ${className}`}
-    onclick={onclick}
     id={id}
 >
     {arrowDir === "left" && (
