@@ -14,7 +14,7 @@ const pagination = [
 <header class="overflow-hidden">
     <Navbar />
     <div class="w-screen h-screen overflow-hidden">
-        <Slides />
+        <Slides client:load />
         <div class="absolute bottom-0 z-10 flex flex-col lg:flex-row justify-center items-end">
             {pagination.map( pag =>
                 <CardNav icon={pag.icon} title={pag.title} description={pag.description} background={pag.background}/>

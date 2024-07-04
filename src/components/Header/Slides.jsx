@@ -1,13 +1,16 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import './style.css';
 
 
 const slidesData = [
     { image: "bg-[url('/header1.jpg')]", textClass: 'text-[#75B7D1] font-radwave title'},
-    { image: "bg-[url('/header2.webp')]", textClass: 'text-[#75B7D1] font-radwave title'}
-
+    { image: "bg-[url('/header2.webp')]", textClass: 'text-[#D02042] font-radwave title'},
+    { image: "bg-[url('/header3.jpg')]", textClass: 'text-[#86B7DC] font-radwave title'},
+    { image: "bg-[url('/header4.jpg')]", textClass: 'text-[#83A327] font-radwave title'},
+    { image: "bg-[url('/header5.jpg')]", textClass: 'text-[#516135] font-radwave title'},
+    { image: "bg-[url('/header6.jpg')]", textClass: 'text-[#CDB7A2] font-radwave title'}
 ];
 
 
@@ -17,16 +20,20 @@ const Slides = () => {
             <Swiper
                 spaceBetween={0}
                 centeredSlides={true}
+                slideToClickedSlide={true}
                 autoplay={{
-                    delay: 1000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
                     clickable: true,
                 }}
                 // navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                effect="fade"
+                modules={[Autoplay, EffectFade]}
                 slidesPerView={1}
+                allowTouchMove={false}
+                speed={1000}
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
