@@ -10,7 +10,7 @@ import Title from "./Title.astro";
         <div id="capa" class="absolute w-full h-[90vh]"></div>
         <div class="absolute m-10 w-full" id="title-container">
             <div class="" id="div2">
-                <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5">
+                <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5" id="title1">
                     <span
                         class="font-nunito uppercase font-black text-[#494949] text-[1.3rem]"
                         >Sumérgete en la&nbsp;</span
@@ -24,6 +24,13 @@ import Title from "./Title.astro";
                         >de explorar</span
                     >
                     <Title title="Geoturismo Contrafuerte" />
+                </div>
+
+                <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5 hidden" id="title2">
+                    <span
+                        class="font-nunito uppercase font-black text-[#83A327] text-[1.3rem]"
+                        >Geo patrimonio</span
+                    >
                 </div>
             </div>
             <div class="my-5">
@@ -40,7 +47,7 @@ import Title from "./Title.astro";
                 </p>
             </div>
             <Button text="Conoce más" id="conocer-mas" />
-            <Button class="hidden" text="Volver" id="volver"/>
+            <Button class="hidden" text="Volver" dir="left" id="volver"/>
         </div>
     </div>
 </div>
@@ -78,11 +85,17 @@ import Title from "./Title.astro";
         const button = document.getElementById('conocer-mas');
         const buttonVolver = document.getElementById('volver');
         const description = document.getElementById("description");
+        const title1 = document.getElementById('title1');
+        const title2 = document.getElementById('title2');
+
         document.getElementById("capa").classList.toggle("shifted");
         document.getElementById("title-container").classList.toggle("shifted");
 
         description.classList.toggle('max-w-[800px]')
         description.classList.toggle('w-5/6');
+
+        title1.classList.toggle('hidden');
+        title2.classList.toggle('hidden');
 
         button.classList.toggle('hidden');
         buttonVolver.classList.toggle('hidden');
