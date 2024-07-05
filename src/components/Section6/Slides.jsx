@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-
 const slidesData = [
     {image: 'photo1.webp', text: 'Cerro La Overa, entrada a Contrafuerte'},
     {image: 'photo2.webp', text: 'Cordón Caulle con vista a las Torres del Huishue'},
@@ -20,6 +19,24 @@ const slidesData = [
     {image: 'video4.mp4', text: 'Complejo volcánico Puyehue-Cordón Caulle'},
     {image: 'photo15.webp', text: 'cráter Volcán Puyehue'},
 ];
+
+const buttonStyle = {
+    width: '50px',
+    height: '50px',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+};
+
+const nextButtonStyle = {
+    ...buttonStyle,
+    backgroundImage: 'url("/right.svg")',
+};
+
+const prevButtonStyle = {
+    ...buttonStyle,
+    backgroundImage: 'url("/left.svg")',
+};
 
 
 const Slides = () => {
@@ -48,6 +65,8 @@ const Slides = () => {
                         </div>
                     </SwiperSlide>
                 ))}
+                <div className="swiper-button-next" style={nextButtonStyle}></div>
+                <div className="swiper-button-prev" style={prevButtonStyle}></div>
             </Swiper>
         </>
     );

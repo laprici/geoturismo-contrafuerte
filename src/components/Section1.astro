@@ -1,6 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import Title from "./Title.astro";
+import Gallery from './Gallery.jsx';
 
 ---
 
@@ -48,6 +49,9 @@ import Title from "./Title.astro";
             </div>
             <Button text="Conoce más" id="conocer-mas" />
             <Button class="hidden" text="Volver" dir="left" id="volver"/>
+            <div id="gallery" class="hidden">
+                <Gallery client:load />
+            </div>
         </div>
     </div>
 </div>
@@ -76,6 +80,8 @@ import Title from "./Title.astro";
 </style>
 
 <script>
+    import GLightbox from 'glightbox';
+
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#conocer-mas").addEventListener("click", function(){ handleButtonClick() });
         document.querySelector("#volver").addEventListener("click", function(){ handleButtonClick() });
@@ -87,6 +93,7 @@ import Title from "./Title.astro";
         const description = document.getElementById("description");
         const title1 = document.getElementById('title1');
         const title2 = document.getElementById('title2');
+        const buttonVerFotos = document.getElementById('gallery');
 
         document.getElementById("capa").classList.toggle("shifted");
         document.getElementById("title-container").classList.toggle("shifted");
@@ -99,6 +106,7 @@ import Title from "./Title.astro";
 
         button.classList.toggle('hidden');
         buttonVolver.classList.toggle('hidden');
+        buttonVerFotos.classList.toggle('hidden');
 
         if(Array.from(button.classList).some(b => b === 'hidden')) {
             description.innerText = `Naturaleza simplemente poderosa, palabras que mejor representan y distinguen al Complejo Volcánico Puyehue-Cordón Caulle, coronado con el imponente Volcán Puyehue, macizo de 2.240 mts. de altitud, inserto en el Parque Nacional que lleva su nombre, dicho Parque posee 107.000 hás de superficie que comparten 2 regiones ,el 43,2% pertenece a la Región de Los Ríos y el resto a la vecina Región de Los Lagos.
