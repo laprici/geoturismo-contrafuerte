@@ -55,8 +55,7 @@ const Slides = () => {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Autoplay, Pagination]}
                 slidesPerView={1.5}
             >
                 {slidesData.map((slide, index) => (

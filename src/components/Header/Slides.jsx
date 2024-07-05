@@ -37,7 +37,7 @@ const Slides = () => {
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className={"h-screen w-screen container-image-mobile lg:container-image " + slide.image}>
+                        <div className={"h-screen w-screen container-image-mobile lg:container-image " + slide.image + " bg-no-repeat bg-cover"}>
                             <div className="absolute top-[35vh] sm:top-[30vh] lg:top-[40%] left-0 z-10 px-10">
                                 <p className="text-white pt-4 text-sm lg:text-lg uppercase">Rincón donde la tierra misma te abraza y te renueva.</p>
                                 <div className="">

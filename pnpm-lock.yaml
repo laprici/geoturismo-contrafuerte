@@ -26,6 +26,9 @@ dependencies:
   astro:
     specifier: ^4.10.1
     version: 4.10.1
+  glightbox:
+    specifier: ^3.3.0
+    version: 3.3.0
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -38,6 +41,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.4.4
     version: 3.4.4
+  yet-another-react-lightbox:
+    specifier: ^3.21.0
+    version: 3.21.0(react-dom@18.3.1)(react@18.3.1)
 
 packages:
 
@@ -2044,6 +2050,10 @@ packages:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: false
 
+  /glightbox@3.3.0:
+    resolution: {integrity: sha512-SJukatHBZZ/POMOpLUQ6/dhXf/wJTDx1wZ/FwApjseXw2WrRj3Ze9DzNCFYzca0oU7RjXQhi9o02aIZ9SuCz1A==}
+    dev: false
+
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -4013,6 +4023,17 @@ packages:
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
+    dev: false
+
+  /yet-another-react-lightbox@3.21.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-mBDnQ4dttseCxCUz1ECnnlbnD5+HfYB9LUmAd9mXyL91CwP+GYiSxk4pTMCfl6MLGyJ6aLvJKrbRP26Fbg6UrA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /yocto-queue@0.1.0:
