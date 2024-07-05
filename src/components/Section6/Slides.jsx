@@ -25,7 +25,7 @@ const Slides = () => {
     return (
         <>
             <Swiper
-                spaceBetween={0}
+                spaceBetween={10}
                 pagination={{
                     clickable: true,
                 }}
