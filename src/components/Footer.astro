@@ -8,8 +8,8 @@ const data = [
 ---
 
 <footer class="py-20">
-    <div class="flex px-geo">
-        <div class="w-1/2 flex">
+    <div class="flex flex-col md:px-geo md:flex-row">
+        <div class="w-screen md:w-1/2 flex flex-col md:flex-row items-center md:items-start px-geo">
             <div class="w-1/2">
                 <svg width="233" height="4" viewBox="0 0 233 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="233" height="4" fill="#324B3E"/>
@@ -28,7 +28,7 @@ const data = [
                     ))}
                 </div>
             </div>
-            <div class="w-1/2">
+            <div class="w-1/2 pt-10 md:pt-0">
                 <svg width="233" height="4" viewBox="0 0 233 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="233" height="4" fill="#324B3E"/>
                 </svg>
@@ -58,8 +58,8 @@ const data = [
                 </div>
             </div>
         </div>
-        <div class="w-1/2 flex justify-end items-center">
-            <img src="/logo-footer.webp" alt="">
+        <div class="w-screen md:w-1/2 pt-10 flex justify-center md:justify-end items-center">
+            <img src="/logo-footer.webp" class="w-[200px]" alt="">
         </div>
     </div>
 </footer>
