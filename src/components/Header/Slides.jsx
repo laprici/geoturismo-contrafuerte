@@ -38,7 +38,7 @@ const Slides = () => {
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div className={"h-screen w-screen container-image-mobile lg:container-image " + slide.image + " bg-no-repeat bg-cover"}>
-                            <div className="absolute top-[35vh] sm:top-[30vh] lg:top-[40%] left-0 z-10 px-10">
+                            <div className="absolute top-[35vh] sm:top-[30vh] lg:top-[40%] left-0 z-10 px-geo">
                                 <p className="text-white pt-4 text-sm lg:text-lg uppercase">Rincón donde la tierra misma te abraza y te renueva.</p>
                                 <div className="">
                                     <h2 className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">Naturaleza</h2>
@@ -51,7 +51,7 @@ const Slides = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="absolute top-10 lg:top-1/2 right-0 transform translate-y-1/4 lg:-translate-y-1/2 px-10 z-10">
+                            <div className="absolute top-10 lg:top-1/2 right-0 transform translate-y-1/4 lg:-translate-y-1/2 px-geo z-10">
                                 <img className="max-w-[40vw] min-w-[200px]" src="./map.png" alt="Mapa" />
                             </div>
                         </div>

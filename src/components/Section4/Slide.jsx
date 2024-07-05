@@ -63,7 +63,7 @@ const Slides = () => {
                         <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
                         <div className='py-10 w-auto'>
                             <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
-                                <div className="max-w-[1200px] p-10">
+                                <div className="max-w-[1200px] p-10 px-geo">
                                     <p className='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
                                     <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">0{index + 1}.&nbsp;</span>
                                     <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">
@@ -71,7 +71,7 @@ const Slides = () => {
                                     </span>
                                     <p className="text-white font-nunito pt-5">{slide.subtitle}</p>
                                 </div>
-                                <div className='flex px-10'>
+                                <div className='flex px-geo'>
                                     <div className="flex flex-col gap-y-5">
                                         {slide.info.map((info, infoIndex) => (
                                             <div className='flex flex-row gap-x-5' key={infoIndex}>
@@ -83,7 +83,7 @@ const Slides = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <button className='mx-10 mt-10 rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white' onClick={() => handleViewRouteClick(index)}>
+                                <button className='mx-[3.8rem] mt-10 rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white' onClick={() => handleViewRouteClick(index)}>
                                     Ver ruta
                                     <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
@@ -93,7 +93,7 @@ const Slides = () => {
                             <div id={`slide-click-${index}`} className={`${activeSlide === index ? 'block' : 'hidden'}`}>
                                 <div className="flex flex-col">
                                     <div className='z-10'>
-                                        <div className="max-w-[1000px] p-10">
+                                        <div className="max-w-[1000px] px-geo py-10">
                                             <p className='uppercase text-white font-bold text-[1.5rem]'>Rutas</p>
                                             <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">0{index + 1}.&nbsp;</span>
                                             <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">
@@ -102,7 +102,7 @@ const Slides = () => {
                                         </div>
                                     </div>
                                     <div className='z-10 flex justify-between'>
-                                        <div className='px-10'>
+                                        <div className='px-geo'>
                                             <button className='rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white bg-black bg-opacity-50' onClick={handleBackClick}>
                                                 Volver
                                                 <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
