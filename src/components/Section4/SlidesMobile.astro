@@ -1,0 +1,59 @@
+---
+const rowData = [
+    {
+        image: '/1.webp', detailImage: '/1-details.webp', title: 'Termas Contrafuerte', subtitle: 'La ruta Contrafuerte , es un emocionante sendero  de 14kms auto-guiado en vehículo 4x4. Los visitantes pueden llegar hasta las Termas naturales, disfrutar del bosque gris y el mirador de la cascada termal. Esta ruta permite a los excursionistas explorar a su propio ritmo, descubriendo la belleza natural y la diversidad geológica de la zona. Es ideal para aquellos que prefieren una experiencia más libre y flexible.', info: [
+            { icon: '/icon-price.svg', text: 'Entrada general: <b>$12.000</b> <br>Entrada niños (5-10 años): <b>$5.000</b>' },
+            { icon: '/icon-vehicle.svg', text: 'Tiempo total de caminata: <b>1,5 HRS.</b>.<br><b>DIFICULTAD BAJA</b>' },
+            { icon: '/icon-calendar.svg', text: 'Temporada alta, enero, febrero, marzo y abril: <br> <b>LUNES A DOMINGO 8:30HRS a 21:00HRS</b><br><b>INGRESO SÓLO CON RESERVA</b>' },
+            { icon: '/icon-restriction.svg', text: 'Pago efectivo o transferencia.<br>No se permiten mascotas.<br>No se puede hacer fogatas.<br>No se admiten motos 2 ruedas.<br>No puede dejar la basura que Ud. genere en su visita al lugar.' },
+        ]
+    },
+    { image: '/2.webp', detailImage: '/2-details.webp', title: 'Cordón Caulle', subtitle: 'Después del sendero Contrafuerte, puedes realizar el trekking hacia el Cordón Caulle, donde se encuentra la Colada de Lava del año 2011 y fumarolas.  Este recorrido tiene un nivel de dificultad medio-alto. Garantiza una experiencia enriquecedora, permitiendo a los excursionistas recorrer 6,5 km explorando los fascinantes paisajes volcánicos.', info: [
+            { icon: '/icon-price.svg', text: 'Entrada general: <b>$12.000</b>' },
+            { icon: '/icon-trekking.svg', text: 'Tiempo total de caminata: <b>4,5 HRS.</b>.<br><b>DIFICULTAD MEDIA-ALTA</b>' },
+            { icon: '/icon-calendar.svg', text: 'Temporada alta, enero, febrero, marzo y abril: <br> <b>LUNES A DOMINGO 8:30HRS a 21:00HRS</b><br><b>INGRESO SÓLO CON RESERVA</b>' },
+            { icon: '/icon-restriction.svg', text: 'Pago efectivo o transferencia.<br>No se permiten mascotas.<br>No se puede hacer fogatas.<br>No se admiten motos 2 ruedas.<br>No puede dejar la basura que Ud. genere en su visita al lugar.' },
+        ]
+    },
+    { image: '/3.webp', detailImage: '/3-details.webp', title: 'Geotur', subtitle: 'Es una ruta Full-day guiada por un geólogo, el Circuito se inicia a las 7:30 am en el acceso principal de Geoturismo Contrafuerte, el visitante debe recorrer 14 km de ascenso en su vehículo hasta llegar al final del camino,(km 14) donde comenzará el trekking y la travesía hacia el Cordón Caulle, pasará por los faldeos del Volcán Puyehue , los depósitos de lava volcánica del año 2011, las fumarolas , para posteriormente rodear el Cráter del Caulle del año 2011 e ir descendiendo hacia las termas naturales, culminando con un exquisito baño termal.', info: [
+            { icon: '/icon-price.svg', text: '<b>$90.000</b>/ por persona : 1 persona <br> <b>$85.000</b>/ por persona : 2 personas.<br> <b>$75.000</b>/ por persona : 3 a 4 personas.<  (*Consultar por grupos más numerosos)<br>VALOR INCLUYE:<br>Guía especializado (Geólogo)<br>Entrada de acceso a Geoturismo Contrafuerte y Termas Naturales.' },
+            { icon: '/icon-trekking.svg', text: 'Tiempo total de caminata: <b>12,5 KM / 7 HORAS.</b>.<br><b>DIFICULTAD MEDIA-ALTA</b>' },
+            { icon: '/icon-calendar.svg', text: 'A realizarse sólo los meses de:<br> <b>ENERO, FEBRERO, MARZO Y ABRIL</b>' },
+            { icon: '/icon-restriction.svg', text: 'Pago efectivo o transferencia.<br>No se permiten mascotas.<br>No se puede hacer fogatas.<br>No se admiten motos 2 ruedas.<br>No puede dejar la basura que Ud. genere en su visita al lugar.' },
+        ]
+    },
+    { image: '/4.webp', detailImage: '/4-details.webp', title: 'Volcán Puyehue', subtitle: 'La travesía hacia el Volcán Puyehue parte desde el km 14 de la ruta Contrafuerte, éste es un trekking de 8,7 kms de distancia llegando a la cumbre del Volcán en 4,5 hrs de recorrido , nivel de dificultad medio-alto.', info: [
+            { icon: '/icon-price.svg', text: 'Entrada general: <b>$12.000</b>' },
+            { icon: '/icon-trekking.svg', text: 'Tiempo total de caminata: <b>8,7KM / 4,5 HORAS.</b>.<br><b>DIFICULTAD MEDIA-ALTA</b>' },
+            { icon: '/icon-calendar.svg', text: 'Temporada alta, enero, febrero, marzo y abril: <br> <b>LUNES A DOMINGO 8:30HRS a 21:00HRS</b><br><b>INGRESO SÓLO CON RESERVA</b>' },
+            { icon: '/icon-restriction.svg', text: 'Pago efectivo o transferencia.<br>No se permiten mascotas.<br>No se puede hacer fogatas.<br>No se admiten motos 2 ruedas.<br>No puede dejar la basura que Ud. genere en su visita al lugar.' },
+        ]
+    },
+];
+---
+
+<section class="md:hidden">
+    <div class="">
+        {rowData.map( (row, index) => (
+            <div class="px-geo py-[2.0rem] flex flex-row gap-x-[2.0rem] justify-between" style={`background-image: url('${row.image}')`}>
+                <div class="">
+                    <p class='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
+                    <span class="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">0{index + 1}.&nbsp;</span>
+                    <span class="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">
+                        {row.title}
+                    </span>
+                </div>
+                <button>
+                    <svg width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="0.5" width="54" height="54" rx="27" stroke="white"/>
+                        <path d="M20 28.4999L20 26.4999L32 26.4999L26.5 20.9999L27.92 19.5799L35.84 27.4999L27.92 35.4199L26.5 33.9999L32 28.4999L20 28.4999Z" fill="white"/>
+                    </svg>
+                </button>
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+
+</style>

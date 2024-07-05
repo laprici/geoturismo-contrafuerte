@@ -7,6 +7,7 @@ import '@fontsource/nunito-sans/900.css';
 import '@fontsource/nunito-sans/300.css';
 import Section2 from "../components/Section2.astro";
 import Section3 from "../components/Section3/Section3.astro";
+import SlidesMobile from "../components/Section4/SlidesMobile.astro";
 import Slides from "../components/Section4/Slide";
 import Section5 from "../components/Section5/Section5.astro";
 import Section6 from "../components/Section6/Section6.astro";
@@ -20,7 +21,8 @@ import Footer from '../components/Footer.astro'
 	<Section1 />
 	<Section2 />
 	<Section3 />
-	<!-- <Slides client:load/> -->
+	<Slides client:load/>
+	<SlidesMobile />
 	<!-- <Section5 /> -->
 	<!-- <Section6 /> -->
 	<!-- <Frame /> -->

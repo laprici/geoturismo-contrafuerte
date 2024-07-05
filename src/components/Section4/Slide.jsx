@@ -49,7 +49,7 @@ const Slides = () => {
     };
 
     return (
-        <div className="h-screen">
+        <div className="h-screen hidden md:block">
             <Swiper
                 spaceBetween={0}
                 pagination={{
@@ -57,14 +57,6 @@ const Slides = () => {
                 }}
                 modules={[Autoplay, Pagination]}
                 slidesPerView={1.5}
-                breakpoints={{
-                    576: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 1,
-                    },
-                }}
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index} className='h-screen relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
