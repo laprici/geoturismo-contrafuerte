@@ -34,12 +34,22 @@ const Slides = () => {
                     prevEl: '.swiper-button-prev',
                 }}
                 modules={[Pagination, Navigation]}
-                slidesPerView={3}
-                className="swiper-container"
+                breakpoints={{
+                    0 : {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    }
+                }}
+                className="swiper-container overflow-hidden"
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='flex justify-center     -y-hidden h-[606px]'>
+                        <div className='flex justify-center -y-hidden h-[606px]'>
                             {
                                 slide.image.includes('photo')
                                     ? <img src={slide.image} className='w-[363px] h-[606px]' alt="fotografía paisaje" />
@@ -51,6 +61,8 @@ const Slides = () => {
                         </div>
                     </SwiperSlide>
                 ))}
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </Swiper>
         </>
     );
