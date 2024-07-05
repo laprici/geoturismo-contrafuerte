@@ -19,7 +19,7 @@ import Footer from '../components/Footer.astro'
 	<Header />
 	<Section1 />
 	<Section2 />
-	<!-- <Section3 /> -->
+	<Section3 />
 	<!-- <Slides client:load/> -->
 	<!-- <Section5 /> -->
 	<!-- <Section6 /> -->
@@ -41,11 +41,21 @@ import Footer from '../components/Footer.astro'
 		padding-right: 3.8rem;
 	}
 
+	.mx-geo {
+		margin-left: 3.8rem;
+		margin-right: 3.8rem;
+	}
+
 	@media (max-width: 600px) {
 		.px-geo {
 			padding-left: 2rem;
 			padding-right: 2rem;
-		}	
+		}
+
+		.mx-geo {
+			margin-left: 2rem;
+			margin-right: 2rem;
+		}
 	}
 
 	.font-radwave {
