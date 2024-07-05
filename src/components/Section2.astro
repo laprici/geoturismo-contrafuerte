@@ -3,9 +3,9 @@ import Button from "../components/Button.astro";
 import Title from "./Title.astro";
 ---
 
-<div class="flex flex-rows overflow-hidden my-20 px-geo">
-    <div class="flex w-screen">
-        <div class="w-1/2">
+<div class="flex flex-rows overflow-hidden my-20 lg:px-geo">
+    <div class="flex flex-col-reverse lg:flex-row w-screen">
+        <div class="w-screen px-geo lg:px-0 my-10 lg:my-0 lg:w-1/2">
             <div class="" id="div2">
                 <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5">
                     <span
@@ -34,8 +34,8 @@ import Title from "./Title.astro";
             </div>
             <Button text="Ir a Google Maps" />
         </div>
-        <div class="w-1/2 flex items-center justify-center">
-            <img src="/section2-img.webp" alt="" />
+        <div class="w-screen lg:w-1/2 items-center justify-center flex" id="img-vol">
+            <img src="/section2-img.webp" class="hidden lg:block" alt="" />
         </div>
     </div>
 </div>
@@ -45,4 +45,16 @@ import Title from "./Title.astro";
         background: url('/capa2.webp') no-repeat;
         background-position-x: 50%
     }
+
+    @media (max-width: 1024px) {
+        #img-vol {
+            background: url('/section2-img.webp') no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: auto;
+            height: 50vh;
+        }
+    }
+
+
 </style>
