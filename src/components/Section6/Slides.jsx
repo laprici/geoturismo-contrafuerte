@@ -20,24 +20,6 @@ const slidesData = [
     {image: 'photo15.webp', text: 'cráter Volcán Puyehue'},
 ];
 
-const buttonStyle = {
-    width: '50px',
-    height: '50px',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-};
-
-const nextButtonStyle = {
-    ...buttonStyle,
-    backgroundImage: 'url("/right.svg")',
-};
-
-const prevButtonStyle = {
-    ...buttonStyle,
-    backgroundImage: 'url("/left.svg")',
-};
-
 
 const Slides = () => {
     return (
@@ -47,13 +29,17 @@ const Slides = () => {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
                 modules={[Pagination, Navigation]}
                 slidesPerView={3}
+                className="swiper-container"
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='flex justify-center overflow-y-hidden h-[606px]'>
+                        <div className='flex justify-center     -y-hidden h-[606px]'>
                             {
                                 slide.image.includes('photo')
                                     ? <img src={slide.image} className='w-[363px] h-[606px]' alt="fotografía paisaje" />
@@ -65,8 +51,6 @@ const Slides = () => {
                         </div>
                     </SwiperSlide>
                 ))}
-                <div className="swiper-button-next" style={nextButtonStyle}></div>
-                <div className="swiper-button-prev" style={prevButtonStyle}></div>
             </Swiper>
         </>
     );

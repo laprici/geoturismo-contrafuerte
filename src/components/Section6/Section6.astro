@@ -6,7 +6,10 @@ import Slides from './Slides.jsx';
     <div class="border-[#4A5E73] border-b-[10px] px-10 mb-10 inline-block">
         <Title title="Galería" />
     </div>
-    <div class="max-w-[1200px]">
+    <div class="max-w-[1200px] flex justify-center items-center">
+        <div class="swiper-button-prev relative w-[200px]"></div>
         <Slides client:load/>
+        <div class="swiper-button-next relative w-[200px]"></div>
+
     </div>
 </div>

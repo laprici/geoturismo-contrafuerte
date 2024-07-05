@@ -55,4 +55,23 @@ import Footer from '../components/Footer.astro'
 	.swiper-button-next::after {
 		content: "";
 	}
+
+	.swiper-button-prev
+	.swiper-button-next {
+		width: 100px;
+		height: 100px;
+		background-size: 'contain';
+		background-position: 'center';
+	}
+
+	.swiper-button-prev {
+		background: url("/left.svg") no-repeat;
+		
+
+	}
+
+	.swiper-button-next {
+		background: url("/right.svg") no-repeat;
+	}
+
 </style>
