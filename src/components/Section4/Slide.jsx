@@ -49,7 +49,7 @@ const Slides = () => {
     };
 
     return (
-        <>
+        <div className="h-screen">
             <Swiper
                 spaceBetween={0}
                 pagination={{
@@ -59,7 +59,7 @@ const Slides = () => {
                 slidesPerView={1.5}
             >
                 {slidesData.map((slide, index) => (
-                    <SwiperSlide key={index} className='h-auto relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
+                    <SwiperSlide key={index} className='h-screen relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
                         <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
                         <div className='py-10 w-auto'>
                             <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
@@ -120,7 +120,7 @@ const Slides = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </>
+        </div>
     );
 };
 
