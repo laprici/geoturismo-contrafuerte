@@ -36,13 +36,29 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
         transition: padding 0.3s ease;
     }
 
+    @media screen and (max-width: 600px) {
+        .navcard:hover {
+            padding: 5px 2rem;
+            transition: none;
+        }
+        .navcard:hover .text-div {
+            transform: none;
+            transition: none;
+        }
+        .navcard:hover .text-div .description {
+            opacity: 1;
+            transition: none;
+        }
+    }
+
     @media screen and (max-width: 1024px) {
         .text-div {
             transform: none;
-            transition: transform 0.3s ease;
+            transition: none;
         }
         .description {
             opacity: 1;
+            transition: none;
         }
         .navcard:hover .text-div .description {
             opacity: 1;
@@ -55,8 +71,9 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
         }
 
         .navcard:hover {
+            padding: 5px 2rem;
             transition: none;
-            padding:  1.25rem 3.8rem;
         }
     }
+
 </style>

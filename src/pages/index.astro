@@ -18,13 +18,13 @@ import Footer from '../components/Footer.astro'
 <Layout title="Geoturismo Contrafuerte" description="Este patrimonio geológico natural de extraordinaria belleza y atractivo, es considerado una de las rutas imperdibles en el país, ha sido protagonista de 3 importantes erupciones en los últimos 100 años, 1921, 1960, 2011, siendo además uno de los principales sitios de exploración geotérmica de Chile.">
 	<Header />
 	<Section1 />
-	<Section2 />
-	<Section3 />
-	<Slides client:load/>
-	<Section5 />
-	<Section6 />
-	<Frame />
-	<Footer />
+	<!-- <Section2 /> -->
+	<!-- <Section3 /> -->
+	<!-- <Slides client:load/> -->
+	<!-- <Section5 /> -->
+	<!-- <Section6 /> -->
+	<!-- <Frame /> -->
+	<!-- <Footer /> -->
 </Layout>
 
 <style is:global>
@@ -39,6 +39,13 @@ import Footer from '../components/Footer.astro'
 	.px-geo {
 		padding-left: 3.8rem;
 		padding-right: 3.8rem;
+	}
+
+	@media (max-width: 600px) {
+		.px-geo {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}	
 	}
 
 	.font-radwave {
@@ -79,4 +86,13 @@ import Footer from '../components/Footer.astro'
 		background: url("/right.svg") no-repeat;
 	}
 
+	@media screen and (max-height: 800px) {
+        .map-img-h {
+            display:none;
+        }
+
+		.swiper-slide .title-header {
+			top: 20vh;
+		}
+    }
 </style>
