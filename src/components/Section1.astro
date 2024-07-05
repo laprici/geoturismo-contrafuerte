@@ -5,11 +5,13 @@ import Gallery from './Gallery.jsx';
 
 ---
 
-<div class="relative flex h-[90vh] flex-rows overflow-hidden" id="img-section1">
-    <div class="w-1/2"></div>
-    <div class="w-1/2 flex flex-col justify-center">
-        <div id="capa" class="absolute w-full h-[90vh]"></div>
-        <div class="absolute m-10 w-full" id="title-container">
+<div class="relative flex flex-col lg:flex-row h-[90vh] flex-rows lg:overflow-hidden" id="img-section1">
+    <div class="lg:w-1/2 w-screen">
+        <img class="lg:hidden w-screen" src="/section1.png" alt="">
+    </div>
+    <div class="lg:w-1/2 w-screen flex flex-col justify-center">
+        <div id="capa" class="hidden lg:block absolute w-full h-[90vh]"></div>
+        <div class="lg:absolute p-10 w-full" id="title-container">
             <div class="" id="div2">
                 <div class="max-w-[400px] border-[#83A327] border-l-[10px] p-5" id="title1">
                     <span
@@ -35,7 +37,7 @@ import Gallery from './Gallery.jsx';
                 </div>
             </div>
             <div class="my-5">
-                <p class="font-nunito font-light max-w-[800px]" id="description">
+                <p class="font-nunito font-light pe-5 md:pe-20 lg:pe-5 lg:max-w-[40vw] text-justify" id="description">
                     El hermoso Valle de Contrafuerte se encuentra distante a 48
                     km.al Sur-este de la Comuna de Lago Ranco, es un Área
                     Protegida Privada que cuenta con 3.200 hás., geográficamente
@@ -62,7 +64,6 @@ import Gallery from './Gallery.jsx';
         background-size: cover;
         background-position-y: 100%;
     }
-
     #capa {
         background: rgba(255, 255, 255, 0.18);
         backdrop-filter: blur(10.3px);
@@ -77,11 +78,26 @@ import Gallery from './Gallery.jsx';
     #title-container.shifted {
         transform: translateX(-50%);
     }
+
+    @media screen and (max-width: 1024px) {
+        #img-section1 {
+            background-image: none;
+        }
+
+        #title-container,
+        #capa {
+            transition: none;
+        }
+
+        #capa.shifted,
+        #title-container.shifted {
+            transform: none;
+        }
+    }
+
 </style>
 
 <script>
-    import GLightbox from 'glightbox';
-
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#conocer-mas").addEventListener("click", function(){ handleButtonClick() });
         document.querySelector("#volver").addEventListener("click", function(){ handleButtonClick() });
@@ -98,8 +114,7 @@ import Gallery from './Gallery.jsx';
         document.getElementById("capa").classList.toggle("shifted");
         document.getElementById("title-container").classList.toggle("shifted");
 
-        description.classList.toggle('max-w-[800px]')
-        description.classList.toggle('w-5/6');
+        description.classList.toggle('lg:max-w-[40vw]')
 
         title1.classList.toggle('hidden');
         title2.classList.toggle('hidden');
