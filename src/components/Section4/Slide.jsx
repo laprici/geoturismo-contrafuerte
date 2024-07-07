@@ -49,88 +49,90 @@ const Slides = () => {
     };
 
     return (
-        <div className="h-screen hidden md:block">
-            <Swiper
-                spaceBetween={0}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Autoplay, Pagination]}
-                breakpoints={{
-                    0: {
-                        slidesPerView: 1
-                    },
-                    1024: {
-                        slidesPerView: 1.2
-                    },
-                    1400: {
-                        slidesPerView: 1.5
-                    }
-                }}
-            >
-                {slidesData.map((slide, index) => (
-                    <SwiperSlide key={index} className='h-screen relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
-                        <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
-                        <div className='py-10 xl:py-5 w-auto'>
-                            <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
-                                <div className="max-w-[1200px] p-10 px-geo">
-                                    <p className='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
-                                    <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
-                                    <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">
-                                        {slide.title}
-                                    </span>
-                                    <p className="text-white font-nunito pt-5">{slide.subtitle}</p>
-                                </div>
-                                <div className='flex px-geo'>
-                                    <div className="flex flex-wrap min-[1400px]:flex-col gap-y-5" id="price-descrip">
-                                        {slide.info.map((info, infoIndex) => (
-                                            <div className={`flex flex-row basis-1/2 min-[1400px]:basis-0 gap-x-5 col-${infoIndex} ${infoIndex === 3  && index === 2? 'max-[1400px]:mt-[-6rem]' :'' }`} key={infoIndex}>
-                                                <div className=''>
-                                                    <img src={info.icon} alt="" />
+        <section id="rutas">
+            <div className="h-screen hidden md:block">
+                <Swiper
+                    spaceBetween={0}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Autoplay, Pagination]}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1
+                        },
+                        1024: {
+                            slidesPerView: 1.2
+                        },
+                        1400: {
+                            slidesPerView: 1.5
+                        }
+                    }}
+                >
+                    {slidesData.map((slide, index) => (
+                        <SwiperSlide key={index} className='h-screen relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
+                            <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
+                            <div className='py-10 xl:py-5 w-auto'>
+                                <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
+                                    <div className="max-w-[1200px] p-10 px-geo">
+                                        <p className='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
+                                        <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
+                                        <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">
+                                            {slide.title}
+                                        </span>
+                                        <p className="text-white font-nunito pt-5">{slide.subtitle}</p>
+                                    </div>
+                                    <div className='flex px-geo'>
+                                        <div className="flex flex-wrap min-[1400px]:flex-col gap-y-5" id="price-descrip">
+                                            {slide.info.map((info, infoIndex) => (
+                                                <div className={`flex flex-row basis-1/2 min-[1400px]:basis-0 gap-x-5 col-${infoIndex} ${infoIndex === 3  && index === 2? 'max-[1400px]:mt-[-6rem]' :'' }`} key={infoIndex}>
+                                                    <div className=''>
+                                                        <img src={info.icon} alt="" />
+                                                    </div>
+                                                    <div className='text-white font-nunito' dangerouslySetInnerHTML={{ __html: info.text }} />
                                                 </div>
-                                                <div className='text-white font-nunito' dangerouslySetInnerHTML={{ __html: info.text }} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <button className='mx-[3.8rem] mt-10 rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white' onClick={() => handleViewRouteClick(index)}>
+                                        Ver ruta
+                                        <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id={`slide-click-${index}`} className={`${activeSlide === index ? 'block' : 'hidden'}`}>
+                                    <div className="flex flex-col">
+                                        <div className='z-10'>
+                                            <div className="max-w-[1000px] px-geo py-10">
+                                                <p className='uppercase text-white font-bold text-[1.2rem]'>Rutas</p>
+                                                <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
+                                                <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">
+                                                    {slide.title}
+                                                </span>
                                             </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <button className='mx-[3.8rem] mt-10 rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white' onClick={() => handleViewRouteClick(index)}>
-                                    Ver ruta
-                                    <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div id={`slide-click-${index}`} className={`${activeSlide === index ? 'block' : 'hidden'}`}>
-                                <div className="flex flex-col">
-                                    <div className='z-10'>
-                                        <div className="max-w-[1000px] px-geo py-10">
-                                            <p className='uppercase text-white font-bold text-[1.2rem]'>Rutas</p>
-                                            <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
-                                            <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">
-                                                {slide.title}
-                                            </span>
                                         </div>
-                                    </div>
-                                    <div className='z-10 flex justify-between'>
-                                        <div className='px-geo'>
-                                            <button className='rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white bg-black bg-opacity-50' onClick={handleBackClick}>
-                                                Volver
-                                                <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div className='absolute right-10 bottom-30 max-w-[60vh]'>
-                                            <img src={slide.detailImage} alt="Detalle de la ruta" className="object-cover" />
+                                        <div className='z-10 flex justify-between'>
+                                            <div className='px-geo'>
+                                                <button className='rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white bg-black bg-opacity-50' onClick={handleBackClick}>
+                                                    Volver
+                                                    <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div className='absolute right-10 bottom-30 max-w-[60vh]'>
+                                                <img src={slide.detailImage} alt="Detalle de la ruta" className="object-cover" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+        </section>
     );
 };
 
