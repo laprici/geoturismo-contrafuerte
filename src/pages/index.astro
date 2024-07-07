@@ -102,13 +102,28 @@ import ScrollButton from "../components/ScrollButton.astro";
 		background: url("/right.svg") no-repeat;
 	}
 
-	@media screen and (max-height: 800px) {
+	@media screen and (max-height: 700px) {
 		.map-img-h {
 			display: none;
 		}
 
 		.swiper-slide .title-header {
 			top: 20vh;
+		}
+	}
+
+	@media screen and (min-height: 850px) {
+		.price-descrip {
+			flex-direction: column;
+		}
+		.price-descrip > div {
+			flex-basis: 0;
+		}
+	}
+
+	@media screen and (max-height: 849px) {
+		.price-descrip .col-3-2 {
+			margin-top: -7rem;
 		}
 	}
 </style>
