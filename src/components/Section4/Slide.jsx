@@ -83,9 +83,9 @@ const Slides = () => {
                                         <p className="text-white font-nunito pt-5">{slide.subtitle}</p>
                                     </div>
                                     <div className='flex px-geo'>
-                                        <div className="flex flex-wrap min-[1400px]:flex-col gap-y-5" id="price-descrip">
+                                        <div className="flex flex-wrap gap-y-5 price-descrip">
                                             {slide.info.map((info, infoIndex) => (
-                                                <div className={`flex flex-row basis-1/2 min-[1400px]:basis-0 gap-x-5 col-${infoIndex} ${infoIndex === 3  && index === 2? 'max-[1400px]:mt-[-6rem]' :'' }`} key={infoIndex}>
+                                                <div className={`flex flex-row basis-1/2 gap-x-5 col-${infoIndex}-${index}`} key={infoIndex}>
                                                     <div className=''>
                                                         <img src={info.icon} alt="" />
                                                     </div>
@@ -115,10 +115,10 @@ const Slides = () => {
                                         <div className='z-10 flex justify-between'>
                                             <div className='px-geo'>
                                                 <button className='rounded-full text-white px-4 lg:px-6 flex items-center gap-x-2 py-2 lg:py-2 uppercase text-xs lg:text-xl border border-white bg-black bg-opacity-50' onClick={handleBackClick}>
-                                                    Volver
                                                     <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M4 13L4 11L16 11L10.5 5.50004L11.92 4.08004L19.84 12L11.92 19.92L10.5 18.5L16 13L4 13Z" fill="white" />
+                                                        <path d="M20 11L20 13L8 13L13.5 18.5L12.08 19.92L4.16 12L12.08 4.08002L13.5 5.50002L8 11L20 11Z" fill="white" />
                                                     </svg>
+                                                    Volver
                                                 </button>
                                             </div>
                                             <div className='absolute right-10 bottom-30 max-w-[60vh]'>
