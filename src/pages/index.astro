@@ -13,7 +13,7 @@ import Section5 from "../components/Section5/Section5.astro";
 import Section6 from "../components/Section6/Section6.astro";
 import Frame from "../components/Frame.astro";
 import Footer from "../components/Footer.astro";
-import ScrollButton from '../components/ScrollButton.astro';
+import ScrollButton from "../components/ScrollButton.astro";
 ---
 
 <Layout
@@ -34,6 +34,9 @@ import ScrollButton from '../components/ScrollButton.astro';
 </Layout>
 
 <style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		background-color: #f4f4f4;
 	}
@@ -109,3 +112,27 @@ import ScrollButton from '../components/ScrollButton.astro';
 		}
 	}
 </style>
+
+<script>
+	import { Ripple, initTWE, ScrollSpy } from "tw-elements";
+
+	initTWE({ Ripple, ScrollSpy });
+	const mybutton = document.getElementById("btn-back-to-top");
+
+	const scrollFunction = () => {
+		if (
+			document.body.scrollTop > 20 ||
+			document.documentElement.scrollTop > 20
+		) {
+			mybutton.classList.remove("hidden");
+		} else {
+			mybutton.classList.add("hidden");
+		}
+	};
+	const backToTop = () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
+	mybutton.addEventListener("click", backToTop);
+	window.addEventListener("scroll", scrollFunction);
+</script>
