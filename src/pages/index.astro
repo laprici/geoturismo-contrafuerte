@@ -87,19 +87,33 @@ import ScrollButton from "../components/ScrollButton.astro";
 		content: "";
 	}
 
-	.swiper-button-prev .swiper-button-next {
-		width: 100px;
-		height: 100px;
-		background-size: "contain";
-		background-position: "center";
-	}
-
-	.swiper-button-prev {
-		background: url("/left.svg") no-repeat;
+	.swiper-container {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		display: block;
+		text-align: left;
 	}
 
 	.swiper-button-next {
+		margin-top: 0px;
+		position: absolute;
+		top: 50%;
+		/* right: -40px; */
+		width: 50px;
+		height: 50px;
+		transform: translateY(-100%);
 		background: url("/right.svg") no-repeat;
+	}
+	.swiper-button-prev {
+		position: absolute;
+		top: 50%;
+		/* left: -40px; */
+		width: 50px;
+		height: 50px;
+		transform: translateY(-100%);
+		margin-top: 0px;
+		background: url("/left.svg") no-repeat;
 	}
 
 	@media screen and (max-height: 700px) {
