@@ -1,58 +1,169 @@
 ---
-import '@fontsource/ropa-sans';
+import "@fontsource/ropa-sans";
 ---
 
-<nav
-    class="absolute w-full z-20 top-0 start-0"
->
-    <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-2 lg:py-4 px-5 px-geo">
+<nav class="absolute w-full z-20 top-0 start-0">
+    <div
+        class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto py-2 lg:py-4 px-5 px-geo"
+    >
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img
-                src="./logo.png"
-                class="h-24"
-                alt="Flowbite Logo"
-            />
+            <img src="./logo.png" class="h-24" alt="Flowbite Logo" />
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <button
-                data-collapse-toggle="navbar-sticky"
+                data-collapse-toggle="mobile-menu"
                 type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-sticky"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+                aria-controls="mobile-menu"
                 aria-expanded="false"
             >
-                <span class="sr-only">Abrir</span>
-                <svg width="50" height="50" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.4375 7.625C1.25516 7.625 1.0803 7.55256 0.951364 7.42363C0.822433 7.2947 0.75 7.11983 0.75 6.9375V1.43887C0.75 1.25654 0.822433 1.08167 0.951364 0.952737C1.0803 0.823806 1.25516 0.751373 1.4375 0.751373H6.9375C7.11984 0.751373 7.2947 0.823806 7.42364 0.952737C7.55257 1.08167 7.625 1.25654 7.625 1.43887V6.9375C7.625 7.11983 7.55257 7.2947 7.42364 7.42363C7.2947 7.55256 7.11984 7.625 6.9375 7.625H1.4375ZM11.0625 7.625C10.8802 7.625 10.7053 7.55256 10.5764 7.42363C10.4474 7.2947 10.375 7.11983 10.375 6.9375V1.43887C10.375 1.25654 10.4474 1.08167 10.5764 0.952737C10.7053 0.823806 10.8802 0.751373 11.0625 0.751373H16.5611C16.7435 0.751373 16.9183 0.823806 17.0473 0.952737C17.1762 1.08167 17.2486 1.25654 17.2486 1.43887V6.9375C17.2486 7.11983 17.1762 7.2947 17.0473 7.42363C16.9183 7.55256 16.7435 7.625 16.5611 7.625H11.0625ZM1.4375 17.25C1.25516 17.25 1.0803 17.1776 0.951364 17.0486C0.822433 16.9197 0.75 16.7448 0.75 16.5625V11.0625C0.75 10.8802 0.822433 10.7053 0.951364 10.5764C1.0803 10.4474 1.25516 10.375 1.4375 10.375H6.9375C7.11984 10.375 7.2947 10.4474 7.42364 10.5764C7.55257 10.7053 7.625 10.8802 7.625 11.0625V16.5625C7.625 16.7448 7.55257 16.9197 7.42364 17.0486C7.2947 17.1776 7.11984 17.25 6.9375 17.25H1.4375ZM11.0625 17.25C10.8802 17.25 10.7053 17.1776 10.5764 17.0486C10.4474 16.9197 10.375 16.7448 10.375 16.5625V11.0625C10.375 10.8802 10.4474 10.7053 10.5764 10.5764C10.7053 10.4474 10.8802 10.375 11.0625 10.375H16.5611C16.7435 10.375 16.9183 10.4474 17.0473 10.5764C17.1762 10.7053 17.2486 10.8802 17.2486 11.0625V16.5625C17.2486 16.7448 17.1762 16.9197 17.0473 17.0486C16.9183 17.1776 16.7435 17.25 16.5611 17.25H11.0625Z" fill="white"/>
+                <span class="sr-only">Abrir menú</span>
+                <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M1.4375 7.625C1.25516 7.625 1.0803 7.55256 0.951364 7.42363C0.822433 7.2947 0.75 7.11983 0.75 6.9375V1.43887C0.75 1.25654 0.822433 1.08167 0.951364 0.952737C1.0803 0.823806 1.25516 0.751373 1.4375 0.751373H6.9375C7.11984 0.751373 7.2947 0.823806 7.42364 0.952737C7.55257 1.08167 7.625 1.25654 7.625 1.43887V6.9375C7.625 7.11983 7.55257 7.2947 7.42364 7.42363C7.2947 7.55256 7.11984 7.625 6.9375 7.625H1.4375ZM11.0625 7.625C10.8802 7.625 10.7053 7.55256 10.5764 7.42363C10.4474 7.2947 10.375 7.11983 10.375 6.9375V1.43887C10.375 1.25654 10.4474 1.08167 10.5764 0.952737C10.7053 0.823806 10.8802 0.751373 11.0625 0.751373H16.5611C16.7435 0.751373 16.9183 0.823806 17.0473 0.952737C17.1762 1.08167 17.2486 1.25654 17.2486 1.43887V6.9375C17.2486 7.11983 17.1762 7.2947 17.0473 7.42363C16.9183 7.55256 16.7435 7.625 16.5611 7.625H11.0625ZM1.4375 17.25C1.25516 17.25 1.0803 17.1776 0.951364 17.0486C0.822433 16.9197 0.75 16.7448 0.75 16.5625V11.0625C0.75 10.8802 0.822433 10.7053 0.951364 10.5764C1.0803 10.4474 1.25516 10.375 1.4375 10.375H6.9375C7.11984 10.375 7.2947 10.4474 7.42364 10.5764C7.55257 10.7053 7.625 10.8802 7.625 11.0625V16.5625C7.625 16.7448 7.55257 16.9197 7.42364 17.0486C7.2947 17.1776 7.11984 17.25 6.9375 17.25H1.4375ZM11.0625 17.25C10.8802 17.25 10.7053 17.1776 10.5764 17.0486C10.4474 16.9197 10.375 16.7448 10.375 16.5625V11.0625C10.375 10.8802 10.4474 10.7053 10.5764 10.5764C10.7053 10.4474 10.8802 10.375 11.0625 10.375H16.5611C16.7435 10.375 16.9183 10.4474 17.0473 10.5764C17.1762 10.7053 17.2486 10.8802 17.2486 11.0625V16.5625C17.2486 16.7448 17.1762 16.9197 17.0473 17.0486C16.9183 17.1776 16.7435 17.25 16.5611 17.25H11.0625Z"
+                        fill="white"></path>
                 </svg>
             </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:me-[86px]"
-            id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:px-[1rem] md:py-2 gap-x-0 md:gap-x-5 mt-4 text-xs lg:font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border border-white rounded-full">
+        <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:me-[86px]"
+            id="navbar-sticky"
+        >
+            <ul
+                class="flex flex-col p-4 md:px-[1rem] md:py-2 gap-x-0 md:gap-x-5 mt-4 text-xs lg:font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 border border-white rounded-full"
+            >
                 <li>
-                    <a href="#" class="block py-2 px-3 text-white md:p-0 uppercase" aria-current="page">Inicio</a>
+                    <a
+                        href="#"
+                        class="block py-2 px-3 text-white md:p-0 uppercase"
+                        aria-current="page">Inicio</a
+                    >
                 </li>
                 <li>
-                    <a href="#ubicacion" class="block py-2 px-3 text-white md:p-0 uppercase">Ubicación</a>
+                    <a
+                        href="#ubicacion"
+                        class="block py-2 px-3 text-white md:p-0 uppercase"
+                        >Ubicación</a
+                    >
                 </li>
                 <li>
-                    <a href="#atractivos" class="block py-2 px-3 text-white md:p-0 uppercase">Atractivos</a>
+                    <a
+                        href="#atractivos"
+                        class="block py-2 px-3 text-white md:p-0 uppercase"
+                        >Atractivos</a
+                    >
                 </li>
                 <li>
-                    <a href="#galeria" class="block py-2 px-3 text-white md:p-0 uppercase">Galería 360</a>
+                    <a
+                        href="#galeria"
+                        class="block py-2 px-3 text-white md:p-0 uppercase"
+                        >Galería 360</a
+                    >
                 </li>
                 <li>
-                    <a href="#footer" class="block py-2 px-3 text-white md:p-0 uppercase">Contacto</a>
+                    <a
+                        href="#footer"
+                        class="block py-2 px-3 text-white md:p-0 uppercase"
+                        >Contacto</a
+                    >
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
+<!-- Menú móvil -->
+<div
+    id="mobile-menu"
+    class="fixed inset-0 z-50 bg-[#000000e8] transform -translate-y-full transition-transform duration-300 ease-in-out"
+>
+    <div class="flex justify-end pt-20 px-geo">
+        <button
+            id="close-mobile-menu"
+            class="text-gray-500 hover:text-gray-700 focus:outline-none"
+        >
+            <span class="sr-only">Cerrar menú</span>
+            <svg
+                width="24"
+                height="24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="px-geo">
+        <ul class="space-y-2">
+            <li>
+                <a href="#" class="block py-2 text-white uppercase text-700">Inicio</a>
+            </li>
+            <li>
+                <a href="#ubicacion" class="block py-2 uppercase text-white text-700"
+                    >Ubicación</a
+                >
+            </li>
+            <li>
+                <a href="#atractivos" class="block py-2 uppercase text-white text-700"
+                    >Atractivos</a
+                >
+            </li>
+            <li>
+                <a href="#galeria" class="block py-2 uppercase text-white text-700"
+                    >Galería 360</a
+                >
+            </li>
+            <li>
+                <a href="#footer" class="block py-2 uppercase text-white text-700"
+                    >Contacto</a
+                >
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const toggleButton = document.querySelector(
+            '[data-collapse-toggle="mobile-menu"]',
+        );
+        const closeButton = document.getElementById("close-mobile-menu");
+
+        toggleButton.addEventListener("click", function () {
+            const isExpanded = mobileMenu.classList.contains("translate-y-0");
+            mobileMenu.classList.toggle("translate-y-0", !isExpanded);
+            mobileMenu.classList.toggle("-translate-y-full", isExpanded);
+        });
+
+        closeButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("translate-y-0");
+            mobileMenu.classList.add("-translate-y-full");
+        });
+
+        const links = mobileMenu.querySelectorAll("a");
+        links.forEach((link) => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("translate-y-0");
+                mobileMenu.classList.add("-translate-y-full");
+            });
+        });
+    });
+</script>
+
 <style>
     body {
-        font-family: 'Ropa Sans';
+        font-family: "Ropa Sans";
     }
-
 </style>
