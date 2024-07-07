@@ -49,7 +49,7 @@ const Slides = () => {
     };
 
     return (
-        <section id="rutas">
+        <section id="rutas" className='max-h-[1000px]'>
             <div className="h-screen hidden md:block">
                 <Swiper
                     spaceBetween={0}
@@ -70,7 +70,7 @@ const Slides = () => {
                     }}
                 >
                     {slidesData.map((slide, index) => (
-                        <SwiperSlide key={index} className='h-screen relative' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
+                        <SwiperSlide key={index} className='h-screen relative max-h-[1000px]' style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover'}}>
                             <div className={`absolute inset-0 bg-black bg-opacity-50 ${activeSlide === index ? 'block' : 'hidden'}`} />
                             <div className='py-10 xl:py-5 w-auto'>
                                 <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
