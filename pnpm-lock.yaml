@@ -41,6 +41,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.4.4
     version: 3.4.4
+  tw-elements:
+    specifier: ^2.0.0
+    version: 2.0.0
   yet-another-react-lightbox:
     specifier: ^3.21.0
     version: 3.21.0(react-dom@18.3.1)(react@18.3.1)
@@ -3728,6 +3731,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /tw-elements@2.0.0:
+    resolution: {integrity: sha512-aiitkqzmCZIZ9zJr3V6ErVzU/CrKoAkptpv94t0pEKnVn2Ah4jOplXOO/v6Fo9jr3PoTA5dxvlyS4w8rnW/iag==}
+    dev: false
 
   /type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
