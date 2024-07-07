@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header/Header.astro";
 import Section1 from "../components/Section1.astro";
-import '@fontsource/nunito-sans';
-import '@fontsource/nunito-sans/900.css';
-import '@fontsource/nunito-sans/300.css';
+import "@fontsource/nunito-sans";
+import "@fontsource/nunito-sans/900.css";
+import "@fontsource/nunito-sans/300.css";
 import Section2 from "../components/Section2.astro";
 import Section3 from "../components/Section3/Section3.astro";
 import SlidesMobile from "../components/Section4/SlidesMobile.astro";
@@ -12,16 +12,18 @@ import Slides from "../components/Section4/Slide";
 import Section5 from "../components/Section5/Section5.astro";
 import Section6 from "../components/Section6/Section6.astro";
 import Frame from "../components/Frame.astro";
-import Footer from '../components/Footer.astro'
-
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Geoturismo Contrafuerte" description="Este patrimonio geológico natural de extraordinaria belleza y atractivo, es considerado una de las rutas imperdibles en el país, ha sido protagonista de 3 importantes erupciones en los últimos 100 años, 1921, 1960, 2011, siendo además uno de los principales sitios de exploración geotérmica de Chile.">
+<Layout
+	title="Geoturismo Contrafuerte"
+	description="Este patrimonio geológico natural de extraordinaria belleza y atractivo, es considerado una de las rutas imperdibles en el país, ha sido protagonista de 3 importantes erupciones en los últimos 100 años, 1921, 1960, 2011, siendo además uno de los principales sitios de exploración geotérmica de Chile."
+>
 	<Header />
 	<Section1 />
 	<Section2 />
 	<Section3 />
-	<Slides client:load/>
+	<Slides client:load />
 	<SlidesMobile />
 	<Section5 />
 	<Section6 />
@@ -31,7 +33,7 @@ import Footer from '../components/Footer.astro'
 
 <style is:global>
 	body {
-		background-color: #F4F4F4;
+		background-color: #f4f4f4;
 	}
 	@font-face {
 		font-family: "Radwave";
@@ -72,7 +74,7 @@ import Footer from '../components/Footer.astro'
 		-webkit-text-stroke: 1px white;
 	}
 	.stroke-1px-grey {
-		-webkit-text-stroke: 1.5px #4F4F4F;
+		-webkit-text-stroke: 1.5px #4f4f4f;
 	}
 
 	.swiper-button-prev::after,
@@ -80,12 +82,11 @@ import Footer from '../components/Footer.astro'
 		content: "";
 	}
 
-	.swiper-button-prev
-	.swiper-button-next {
+	.swiper-button-prev .swiper-button-next {
 		width: 100px;
 		height: 100px;
-		background-size: 'contain';
-		background-position: 'center';
+		background-size: "contain";
+		background-position: "center";
 	}
 
 	.swiper-button-prev {
@@ -97,12 +98,12 @@ import Footer from '../components/Footer.astro'
 	}
 
 	@media screen and (max-height: 800px) {
-        .map-img-h {
-            display:none;
-        }
+		.map-img-h {
+			display: none;
+		}
 
 		.swiper-slide .title-header {
 			top: 20vh;
 		}
-    }
+	}
 </style>

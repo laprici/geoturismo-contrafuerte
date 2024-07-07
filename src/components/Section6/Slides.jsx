@@ -45,7 +45,7 @@ const Slides = () => {
                         slidesPerView: 3
                     }
                 }}
-                className="swiper-container overflow-hidden"
+                className="swiper-container overflow-hidden max-w-[1200px]"
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
