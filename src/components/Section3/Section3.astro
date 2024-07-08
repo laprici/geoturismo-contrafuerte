@@ -12,7 +12,7 @@ const cards = [
         button: {
             title: "Aguas termales",
             img: "/s1.jpg",
-            id: 'card1'
+            id: "card1",
         },
     },
     {
@@ -23,7 +23,7 @@ const cards = [
         button: {
             title: "Volcán",
             img: "/s2.jpg",
-            id: 'card2'
+            id: "card2",
         },
     },
     {
@@ -34,14 +34,14 @@ const cards = [
         button: {
             title: "Cordón del Caulle",
             img: "/s3.jpg",
-            id: 'card3'
+            id: "card3",
         },
     },
 ];
 ---
 
 <section id="atractivos" class="max-w-[2000px] 2xl:mx-auto">
-    <div class="lg:px-geo pb-20" id="cont-principal">
+    <div class="px-geo pb-20" id="cont-principal">
         <div class="border-[#54574E] border-t-[10px] max-w-[600px] pt-5 mx-geo">
             <span
                 class="font-nunito uppercase font-black text-[#54574E] text-[1rem] md:text-[1.3rem]"
@@ -50,7 +50,10 @@ const cards = [
             <Title title="Atractivos" />
         </div>
 
-        <div class="flex flex-col lg:flex-row gap-y-10 lg:gap-x-10 justify-center pt-10" id="cardNv">
+        <div
+            class="flex flex-col lg:flex-row gap-y-10 lg:gap-x-10 justify-center pt-10"
+            id="cardNv"
+        >
             {
                 cards.map((card) => (
                     <Card
@@ -65,22 +68,65 @@ const cards = [
         </div>
     </div>
 
-    <div id='cont-img' class="relative hidden overflow-hidden">
-        <div class="absolute left-0 top-0 w-full h-full">
-            <div class="relative flex justify-center w-full h-full overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent z-10"></div>
-                <video class="absolute top-0 left-0 w-full h-full object-cover" muted loop autoplay></video>
-                <div class="absolute pt-10 inset-0 z-20 ">
-                    <svg class="px-[3.8rem]" width="498" height="8" viewBox="0 0 498 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="498" y="3.05176e-05" width="8.00002" height="498" transform="rotate(90 498 3.05176e-05)" fill="white"/>
-                    </svg>
-                    <p class="px-[3.8rem] pt-2 text-white font-nunito uppercase font-semibold">Disfruta diferentes atractivos</p>
-                    <h2 class="px-[3.8rem] flex font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]" id="img-title"></h2>
-                </div>
-                <button class="absolute bottom-1/2 left-[3.8rem] transform -translate-y-1/2 z-20" id="btn-regresar">
-                    <svg width="64" height="60" viewBox="0 0 64 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="63.5" y="59.5" width="63" height="59" rx="29.5" transform="rotate(180 63.5 59.5)" stroke="white"/>
-                        <path d="M40 29L40 31L28 31L33.5 36.5L32.08 37.92L24.16 30L32.08 22.08L33.5 23.5L28 29L40 29Z" fill="white"/>
+    <div id="cont-img" class="relative hidden overflow-hidden">
+        <div class="video-container">
+            <video
+                class="w-screen h-screen mx-auto object-cover center video-container"
+                muted
+                loop
+                autoplay></video>
+            <div
+                class="absolute pt-10 w-screen h-screen inset-0 z-20 hidden"
+                id="video-overlay"
+            >
+                <svg
+                    class="px-geo"
+                    width="400"
+                    height="8"
+                    viewBox="0 0 498 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="498"
+                        y="3.05176e-05"
+                        width="8.00002"
+                        height="498"
+                        transform="rotate(90 498 3.05176e-05)"
+                        fill="white"></rect>
+                </svg>
+                <p
+                    class="px-geo pt-2 text-white font-nunito uppercase font-semibold"
+                >
+                    Disfruta diferentes atractivos
+                </p>
+                <h2
+                    class="px-geo flex font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]"
+                    id="img-title"
+                >
+                </h2>
+                <button
+                    class="absolute bottom-1/2 px-geo transform -translate-y-1/2 z-20"
+                    id="btn-regresar"
+                >
+                    <svg
+                        width="64"
+                        height="60"
+                        viewBox="0 0 64 60"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            x="63.5"
+                            y="59.5"
+                            width="63"
+                            height="59"
+                            rx="29.5"
+                            transform="rotate(180 63.5 59.5)"
+                            stroke="white"></rect>
+                        <path
+                            d="M40 29L40 31L28 31L33.5 36.5L32.08 37.92L24.16 30L32.08 22.08L33.5 23.5L28 29L40 29Z"
+                            fill="white"></path>
                     </svg>
                 </button>
             </div>
@@ -95,36 +141,71 @@ const cards = [
             margin: 0 1rem;
         }
     }
+
+    .video-container {
+        position: relative;
+    }
+
+    .video-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0)
+        );
+        pointer-events: none;
+        z-index: 10;
+    }
 </style>
 
 <script>
     const resources = {
-        'card1' : { title: "Aguas termales", img: "/1.mp4" },
-        'card2' : { title: "Cordón del Caulle", img: "/3.mp4" },
-        'card3' : { title: "Volcán", img: "/2.mp4" }
-    }
+        card1: { title: "Aguas termales", img: "/1.mp4" },
+        card2: { title: "Cordón del Caulle", img: "/3.mp4" },
+        card3: { title: "Volcán", img: "/2.mp4" },
+    };
     const idButtons = Object.keys(resources);
 
-    const divPrincipal = document.getElementById('cont-principal');
+    const divPrincipal = document.getElementById("cont-principal");
     const heightContPrincipal = divPrincipal.offsetHeight;
-    const divImg = document.getElementById('cont-img');
+    const divImg = document.getElementById("cont-img");
     divImg.style.height = `${heightContPrincipal}px`;
 
-    idButtons.forEach( button => {
+    idButtons.forEach((button) => {
         const elemButton = document.getElementById(button);
-        elemButton.addEventListener('click', function () {
-            divPrincipal.classList.toggle('hidden');
-            divImg.classList.toggle('hidden');
-            divImg.querySelector('video').src = resources[button].img;
-            divImg.scrollIntoView({ behavior: 'smooth' });
-            divImg.querySelector('#img-title').innerHTML = resources[button].title;
-        })
-    })
+        elemButton.addEventListener("click", function () {
+            divPrincipal.classList.toggle("hidden");
+            divImg.classList.toggle("hidden");
+            const videoElement = divImg.querySelector("video");
+            const overlay = document.getElementById("video-overlay");
+            videoElement.src = resources[button].img;
+            videoElement.play();
 
-    const btnRegresar = document.getElementById('btn-regresar');
-    btnRegresar.addEventListener('click', function () {
-        divPrincipal.classList.toggle('hidden');
-        divImg.classList.toggle('hidden');
-    })
+            // Muestra el overlay solo cuando el video ha cargado
+            videoElement.addEventListener("loadeddata", () => {
+                divImg
+                    .querySelector(".video-container")
+                    .classList.add("loaded");
+                overlay.classList.remove("hidden");
+            });
 
+            divImg.scrollIntoView({ behavior: "smooth" });
+            divImg.querySelector("#img-title").innerHTML =
+                resources[button].title;
+        });
+    });
+
+    const btnRegresar = document.getElementById("btn-regresar");
+    btnRegresar.addEventListener("click", function () {
+        divPrincipal.classList.toggle("hidden");
+        divImg.classList.toggle("hidden");
+        const overlay = document.getElementById("video-overlay");
+        divImg.querySelector(".video-container").classList.remove("loaded");
+        overlay.classList.add("hidden");
+    });
 </script>
