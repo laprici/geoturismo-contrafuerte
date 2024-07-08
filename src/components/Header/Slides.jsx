@@ -41,9 +41,9 @@ const Slides = () => {
                             <div className="absolute top-[35vh] title-header sm:top-[30vh] lg:top-[40%] left-0 z-10 px-geo">
                                 <p className="text-white pt-4 text-sm lg:text-lg uppercase">Rincón donde la tierra misma te abraza y te renueva.</p>
                                 <div className="">
-                                    <h2 className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">Naturaleza</h2>
-                                    <h2 className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]">simplemente</h2>
-                                    <h2 className={slide.textClass + 'leading-10 sm:leading-[60px] text-[2.2rem] sm:text-[2.8rem] lg:text-[3.8rem]'}>poderosa</h2>
+                                    <h2 className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.8rem] sm:text-[2.8rem] lg:text-[3.8rem]">Naturaleza</h2>
+                                    <h2 className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.8rem] sm:text-[2.8rem] lg:text-[3.8rem]">simplemente</h2>
+                                    <h2 className={slide.textClass + 'leading-10 sm:leading-[60px] text-[1.8rem] sm:text-[2.8rem] lg:text-[3.8rem]'}>poderosa</h2>
                                 </div>
                                 <button className="bg-white rounded-full px-4 lg:px-6 flex items-center gap-x-2 py-2 mtlg:py-2 mt-2 uppercase text-xs lg:text-xl" onClick={() => document.getElementById('img-section1').scrollIntoView({ behavior: 'smooth' })}>Explora
                                     <svg className="w-[18px] lg:w-[24px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
