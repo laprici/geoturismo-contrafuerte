@@ -103,7 +103,7 @@ const rowData = [
 ];
 ---
 
-<section class="md:hidden">
+<section id="rutas-mobile" class="md:hidden">
     <div class="">
         {
             rowData.map((row, index) => (
@@ -125,15 +125,16 @@ const rowData = [
                                 <p class="uppercase text-white text-[1.2rem] font-semibold">
                                     Rutas
                                 </p>
-                                <span class="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">
+                                <span class="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.3rem] sm:text-[2rem] lg:text-[3rem]">
                                     0{index + 1}.&nbsp;
                                 </span>
-                                <span class="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[3rem]">
+                                <span class="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.3rem] sm:text-[2rem] lg:text-[3rem]">
                                     {row.title}
                                 </span>
                             </div>
                             <button>
                                 <svg
+                                    id={`svg${index}`}
                                     width="56"
                                     height="55"
                                     viewBox="0 0 56 55"
@@ -203,7 +204,23 @@ const rowData = [
 </section>
 
 <style>
+    .rotate-90 {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+    }
     .transition-height {
         transition-property: height;
     }
 </style>
+
+<script>
+    const buttons = document.querySelectorAll('#rutas-mobile [id^="link"]');
+
+    buttons.forEach( button => {
+        let svg = button.querySelector('[id^="svg"]');
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            svg.classList.toggle('rotate-90')
+        })
+    })
+</script>

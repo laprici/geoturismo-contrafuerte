@@ -76,8 +76,8 @@ const Slides = () => {
                                 <div id={`slide-principal-${index}`} className={`${activeSlide === index ? 'hidden' : 'block'}`}>
                                     <div className="max-w-[1200px] p-10 px-geo">
                                         <p className='uppercase text-white text-[1.2rem] font-semibold'>Rutas</p>
-                                        <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
-                                        <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.2rem] sm:text-[2rem] lg:text-[2.2rem]">
+                                        <span className="font-radwave text-white stroke-1px-white leading-10 sm:leading-[60px] text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">0{index + 1}.&nbsp;</span>
+                                        <span className="font-radwave text-transparent stroke-1px-white leading-10 sm:leading-[60px] text-[1.8rem] sm:text-[2rem] lg:text-[2.2rem]">
                                             {slide.title}
                                         </span>
                                         <p className="text-white font-nunito pt-5">{slide.subtitle}</p>

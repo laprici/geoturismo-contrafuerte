@@ -23,7 +23,7 @@ const slidesData = [
 
 const Slides = () => {
     return (
-        <div className='relative'>
+        <div className='overflow-hidden'>
             <Swiper
                 spaceBetween={10}
                 pagination={{
@@ -45,7 +45,7 @@ const Slides = () => {
                         slidesPerView: 3
                     }
                 }}
-                className="swiper-container overflow-hidden max-w-[1200px] relative"
+                className="swiper-container overflow-hidden max-w-[1200px]"
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
