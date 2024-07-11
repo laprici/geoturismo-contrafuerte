@@ -49,10 +49,10 @@ const Slides = () => {
             >
                 {slidesData.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className='flex justify-center -y-hidden h-[606px]'>
+                        <div className='flex justify-center -y-hidden h-[500px] 2xl:h-[606px]'>
                             {
                                 slide.image.includes('photo')
-                                    ? <img src={slide.image} className='w-[363px] h-[606px]' alt="fotografía paisaje" />
+                                    ? <img src={slide.image} className='h-[500px] 2xl:h-[606px]' alt="fotografía paisaje" />
                                     : <video src={slide.image} className='w-[363px]' autoPlay loop muted></video>
                             }
                         </div>

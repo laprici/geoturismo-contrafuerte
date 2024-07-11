@@ -9,7 +9,7 @@ const { icon, title, detail, value } = Astro.props;
         <p class="font-nunito text-[#9F6D55]">{detail}</p>
         <p class="font-nunito text-[#9F6D55] font-bold">
             {value.split('HRS')[1]
-                ? <span>{value.split('HRS')[0]} <br> {value.split('HRS')[1]}</span>
+                ? <span>{value.split('HRS')[0]} HRS <br> {value.split('HRS')[1]}</span>
                 : <span>{value}</span>
             }
         </p>

@@ -22,7 +22,7 @@ const Slides = () => {
                 centeredSlides={true}
                 slideToClickedSlide={true}
                 autoplay={{
-                    delay: 5000,
+                    delay: 3000,
                     disableOnInteraction: false,
                 }}
                 pagination={{
@@ -52,7 +52,7 @@ const Slides = () => {
                                 </button>
                             </div>
                             <div className="absolute top-10 lg:top-1/2 right-0 transform translate-y-1/4 lg:-translate-y-1/2 px-geo z-10">
-                                <img className="max-w-[40vw] min-w-[200px] map-img-h"  src="./map.png" alt="Mapa" />
+                                <img className="max-w-[40vw] min-w-[200px] map-img-h md:w-[500px] 2xl:w-[600px]"  src="./map.png" alt="Mapa" />
                             </div>
                         </div>
                     </SwiperSlide>
