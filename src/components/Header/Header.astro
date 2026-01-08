@@ -7,7 +7,7 @@ const pagination = [
     {icon: './icon-maker.svg', title: 'Chile', description: 'Lago Ranco', background:'bg-[#00000047]'},
     {icon: './icon-person.svg', title: 'Turismo geológico', description: 'Geotour', background:'bg-[#00000047]'},
     {icon: './icon-ig.svg', title: 'Síguenos', description: '@geoturismo.contrafuerte', background:'bg-[#00000047]'},
-    {icon: './icon-phone.svg', title: 'Reserva ahora', description: '+56 9 9443 7730', background:'bg-[#000000CC]'}
+    {icon: './icon-phone.svg', title: 'Reserva ahora', description: '+56 9 9443 7730', href: "https://wa.me/56994437730?text=Hola%2C+quisiera+hacer+una+reserva", background:'bg-[#000000CC]'}
 ]
 ---
 
@@ -17,7 +17,7 @@ const pagination = [
         <Slides client:load />
         <div class="absolute bottom-0 z-10 flex flex-col lg:flex-row justify-center items-end">
             {pagination.map( pag =>
-                <CardNav icon={pag.icon} title={pag.title} description={pag.description} background={pag.background}/>
+                <CardNav icon={pag.icon} title={pag.title} description={pag.description} background={pag.background} href={pag.href} isReserva={pag.title === 'Reserva ahora'}/>
             )}
         </div>
     </div>

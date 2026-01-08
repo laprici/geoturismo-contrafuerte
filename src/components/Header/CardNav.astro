@@ -1,17 +1,19 @@
 ---
-const { icon, title, description, background } = Astro.props;
-const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[23vw] text-xs lg:text-sm h-[70px] px-geo py-5 items-center navcard overflow-hidden`;
+const { icon, title, description, background, href, isReserva } = Astro.props;
+const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[23vw] text-xs lg:text-sm h-[70px] px-geo py-5 items-center navcard overflow-hidden ${isReserva ? 'reserva-glow' : ''}`;
 ---
 
 <div class={divClass}>
     <img src={icon} alt="icon" width="25" height="25" />
     <div class="flex flex-col text-div">
         <p class="text-white font-nunito uppercase font-bold">{title}</p>
-        <p
+        {href ?
+        <a class="text-white uppercase description opacity-0 text-xs lg:text-sm underline" href={href} target="_blank">{description}</a>
+        :  <p
             class="text-white uppercase description opacity-0 text-xs lg:text-sm"
         >
             {description}
-        </p>
+        </p>}
     </div>
 </div>
 
@@ -74,6 +76,36 @@ const divClass = `${background} flex gap-x-5 flex-row w-[100vw] md:[25vw] lg:w-[
             padding: 5px 2rem;
             transition: none;
         }
+    }
+
+    @keyframes shine {
+        0% {
+            left: -100%;
+        }
+        20%, 100% {
+            left: 100%;
+        }
+    }
+
+    .reserva-glow {
+        position: relative;
+    }
+
+    .reserva-glow::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+        animation: shine 5s ease-in-out infinite;
+        pointer-events: none;
     }
 
 </style>
